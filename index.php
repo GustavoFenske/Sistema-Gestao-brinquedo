@@ -5,8 +5,7 @@ if (isset($_GET['excluir'])) {
     $id_excluir = $_GET['excluir'];
 
     $sql = "DELETE FROM brinquedos WHERE id = ?";
-
-    $comando = $pdo->prepare($sql);
+    $comando = $conexao->prepare($sql);
     $comando->execute([$id_excluir]);   
    
 }

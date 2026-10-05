@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="faixa_etaria" required><br><br>
 
         <label>Preço:</label><br>
-        <input type="number" step="0.01" name="preco" required><br><br>
+        <input type="number" name="preco" required><br><br>
 
         <label>Quantidade em Estoque:</label><br>
         <input type="number" name="quantidade_estoque" required><br><br>
