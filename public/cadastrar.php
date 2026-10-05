@@ -10,17 +10,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $preco = $_POST['preco'];
     $quantidade_estoque = $_POST['quantidade_estoque'];
         
-        $sql = "INSERT INTO brinquedos (nome, categoria, faixa_etaria, preco, quantidade_estoque) VALUES (?, ?, ?, ?, ?)";
-        $comando = mysqli_prepare($conexao, $sql);
+    $sql = "INSERT INTO brinquedos (nome, categoria, faixa_etaria, preco, quantidade_estoque) VALUES (?, ?, ?, ?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
         
-        mysqli_stmt_bind_param($comando, "sssdi", $nome, $categoria, $faixa_etaria, $preco, $quantidade_estoque);
+    mysqli_stmt_bind_param($comando, "sssdi", $nome, $categoria, $faixa_etaria, $preco, $quantidade_estoque);
 
-        if (mysqli_stmt_execute($comando)) {
-            header("Location: ../index.php");
-            exit;
-        } else {
-            $mensagem = "Erro ao cadastrar no banco de dados.";
-        }
+    if (mysqli_stmt_execute($comando)) {
+        header("Location: ../index.php");
+        exit;
+    } else {
+        $mensagem = "Erro ao cadastrar no banco de dados.";
+    }
 }
 ?>
 
